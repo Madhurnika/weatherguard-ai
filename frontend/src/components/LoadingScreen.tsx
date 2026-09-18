@@ -1,0 +1,1 @@
+export default function LoadingScreen({ message = 'Fetching weather...' }: { message?: string }) { return <div className="loading"><div className="loader" /><strong>{message}</strong><span>WeatherGuard AI is preparing your outlook</span></div>; }

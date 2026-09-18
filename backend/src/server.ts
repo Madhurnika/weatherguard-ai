@@ -1,0 +1,12 @@
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import weatherRoutes from './routes/weatherRoutes';
+import { errorHandler } from './middleware/errorHandler';
+const app = express();
+const port = Number(process.env.PORT) || 5000;
+app.use(cors()); app.use(express.json());
+app.get('/api/health', (_req, res) => res.json({ status: 'ok', service: 'WeatherGuard AI' }));
+app.use('/api/weather', weatherRoutes);
+app.use(errorHandler);
+app.listen(port, () => console.log(`WeatherGuard backend listening on http://localhost:${port}`));

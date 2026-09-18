@@ -1,0 +1,1 @@
+export default function ErrorMessage({ message, onRetry }: { message: string; onRetry: () => void }) { return <div className="error-message"><strong>We could not load that weather.</strong><span>{message}</span><button onClick={onRetry}>Try again</button></div>; }

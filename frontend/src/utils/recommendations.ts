@@ -1,0 +1,2 @@
+import type { CurrentWeather } from '../types/weather';
+export function recommendations(current: CurrentWeather) { const items: string[] = []; if (current.rainProbability > 35) items.push('Carry an umbrella'); if (current.temp > 30) items.push('Stay hydrated'); if (current.uvIndex >= 6) items.push('Use sun protection'); if (current.windSpeed > 8 || current.visibility < 5) items.push('Drive carefully'); if (current.temp < 18) items.push('Carry a light jacket'); if (!items.length) items.push('Great day for outdoor plans'); return items; }
